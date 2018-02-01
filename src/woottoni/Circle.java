@@ -9,7 +9,7 @@ package woottoni;
  *
  * @author Nick
  */
-public class Circle {
+public class Circle extends Shape{
 
     private double radius = 1;
 
@@ -19,7 +19,6 @@ public class Circle {
         setRadius(radius);
     }
 
-    //Accessor
     public double getRadius(){
         return radius;
     }
@@ -37,11 +36,12 @@ public class Circle {
         return 2 * Math.PI * radius;
     }
     
-    public double calcArea(double radius){
+    @Override
+    public double calcArea(){
         return Math.PI * Math.pow(radius, 2);
     }
     
     public String toString(){
-        return String.format("Circle: radius=%.1f", radius);
+        return String.format("Circle: radius=%.1f", this.getClass().getSimpleName(), radius);
     }
 }
