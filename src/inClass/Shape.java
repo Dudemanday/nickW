@@ -3,13 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package woottoni;
+package inClass;
 
 /**
  *
  * @author Nick
  */
-public interface ThreeD {
+public abstract class Shape {
     
-    public abstract double calcVolume();
+    public abstract double calcArea();
+    
+    public String toString() {
+        return this.getClass().getName() + " ";
+    }
 }
