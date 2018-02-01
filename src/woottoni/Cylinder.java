@@ -17,15 +17,16 @@ class Cylinder extends Circle implements ThreeD{
         super();
     }
     
-    public Cylinder(double radius){
-        setRadius(radius);
+    public Cylinder(double radius, double height){
+        super(radius);
+        setHeight(height);
     }
 
-    public double getheight(){
+    public double getHeight(){
         return height;
     }
 
-    public void setheight(double height){
+    public void setHeight(double height){
         if(height > 0){
             this.height = height;
         } else {
@@ -39,7 +40,7 @@ class Cylinder extends Circle implements ThreeD{
     }
     
     public double calcArea(double height){
-        return Math.PI * Math.pow(height, 2);
+        return 2 * super.calcArea() + height * calcCircumference();
     }
     
     public String toString(){

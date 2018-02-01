@@ -32,7 +32,7 @@ public class Circle extends Shape{
         }
     }
     
-    public double calcCir(double radius){
+    public double calcCircumference(){
         return 2 * Math.PI * radius;
     }
     

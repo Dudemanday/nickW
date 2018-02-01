@@ -11,17 +11,39 @@ package woottoni;
  */
 public class Box extends Rectangle implements ThreeD{
     
-    int height = 3;
+    private double height = 3;
     
     public Box(){
         
     }
     
+    public Box(double length, double width, double height) {
+        super(length, width);
+        setHeight(height);
+    }
+    
+    public double getHeight() {
+        return height;
+    }
+    public void setHeight(double height) {
+        if (height > 0){
+            this.height = height;
+        }else{
+            throw new IllegalArgumentException("Error: height must be greater "
+                + "than 0.");
+        }
+    }
+
     public double calcArea(){
-        return height * width * 2 + height * length * 2 + length * width * 2;
+        return 2 * super.calcArea() + 2 * getLength() * height 
+            + 2 * getWidth() * height;
     }
     
     public double calcVolume(){
         return super.calcArea() * height;
+    }
+    
+    public String toString() {
+        return String.format("%s height=%.1f", super.toString(), height);
     }
 }
